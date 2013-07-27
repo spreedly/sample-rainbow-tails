@@ -8,7 +8,7 @@
   </div>
 
   <%= error_messages_for 'credit_card', :object_name => "credit card" %>
-  <%= form_for @credit_card, :as => :credit_card, :url => env.transparent_redirect_form_action do |f| %>
+  <%= form_for @credit_card, :as => :credit_card, :url => environment.transparent_redirect_form_action do |f| %>
     <%= render 'tails/hidden_form_fields' %>
     <%= render 'tails/payment_form_fields', :f => f %>
 
