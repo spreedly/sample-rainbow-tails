@@ -8,7 +8,7 @@
   </div>
 
   <%= error_messages_for 'credit_card', :object_name => "credit card" %>
-  <%= form_for @credit_card, :as => :credit_card, :url => SpreedlyCore.add_payment_method_url do |f| %>
+  <%= form_for @credit_card, :as => :credit_card, :url => env.transparent_redirect_form_action do |f| %>
     <%= render 'tails/hidden_form_fields' %>
     <%= render 'tails/payment_form_fields', :f => f %>
 
@@ -23,7 +23,7 @@
     <p>
       * This is hooked up to a Spreedly Test gateway and does not use real money.
       <br/>
-      &nbsp; This gateway accepts a <%= link_to 'number of test cards', 'https://spreedlycore.com/manual/test-data' %>.  Here are a few examples:
+      &nbsp; This gateway accepts a <%= link_to 'number of test cards', 'https://core.spreedly.com/manual/test-data' %>.  Here are a few examples:
     </p>
     <table class="table span6">
       <tr>

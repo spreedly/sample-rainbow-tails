@@ -1,31 +1,29 @@
 class CreditCard
   include ActiveModel::Validations
 
-  attr_accessor :first_name, :last_name, :card_type, :number, :verification_value, :month, :year, :how_many
-  validates_numericality_of :how_many, :only_integer => true
-  validate :incorporate_errors_from_core
+  attr_reader :spreedly_card, :how_many
+  delegate :first_name, :last_name, :number, :verification_value, :month, :year, to: :spreedly_card, allow_nil: true
 
-  def initialize(core_response = nil)
-    @core_response = core_response
-    initialize_attributes(core_response['payment_method']) if core_response
+  validates_numericality_of :how_many, only_integer: true
+  validate :incorporate_errors_from_spreedly
+
+  def initialize(spreedly_card = nil)
+    @spreedly_card = spreedly_card
+    initialize_how_many
   end
 
   private
+  def initialize_how_many
+    return unless @spreedly_card
 
-  def initialize_attributes(attributes = {})
-    attributes.each do |key, value|
-      begin
-        send("#{key}=", value)
-      rescue NoMethodError
-      end
+    @spreedly_card.data.match(/<how_many>(.*)<\/how_many>/) do |match|
+      @how_many = match[1]
     end
-    self.how_many = attributes["data"].try(:[], "how_many")
   end
 
-  def incorporate_errors_from_core
-    doc = Nokogiri::XML(@core_response.body)
-    doc.search("payment_method>errors>error").each do |each|
-      errors.add(each.attributes['attribute'].to_s, I18n.t(each.attributes['key']))
+  def incorporate_errors_from_spreedly
+    @spreedly_card.errors.each do |attribute_name, error|
+      errors.add(attribute_name, I18n.t(error[:key]))
     end
   end
 end
