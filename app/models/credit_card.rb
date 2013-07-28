@@ -2,7 +2,7 @@ class CreditCard
   include ActiveModel::Validations
 
   attr_reader :spreedly_card, :how_many
-  delegate :first_name, :last_name, :number, :verification_value, :month, :year, to: :spreedly_card, allow_nil: true
+  delegate :first_name, :last_name, :full_name, :number, :verification_value, :month, :year, to: :spreedly_card, allow_nil: true
 
   validates_numericality_of :how_many, only_integer: true
   validate :incorporate_errors_from_spreedly

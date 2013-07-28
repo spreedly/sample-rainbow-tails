@@ -13,7 +13,7 @@ class TailsController < ApplicationController
     @credit_card = CreditCard.new(spreedly.find_payment_method(params[:token]))
     return render_buy_tail unless @credit_card.valid?
 
-    transaction = spreedly.purchase_on_gateway(gateway_token, @payment_method_token, amount_to_charge)
+    transaction = spreedly.purchase_on_gateway(gateway_token, params[:token], amount_to_charge)
     return render_unable_to_process(transaction) unless transaction.succeeded?
 
     return redirect_to(successful_purchase_url)
@@ -51,6 +51,7 @@ class TailsController < ApplicationController
   end
 
   def render_unable_to_process(transaction)
+    flash.now[:error] = transaction.message
     render_buy_tail
   end
 
