@@ -22,8 +22,8 @@ class CreditCard
   end
 
   def incorporate_errors_from_spreedly
-    @spreedly_card.errors.each do |attribute_name, error|
-      errors.add(attribute_name, I18n.t(error[:key]))
+    @spreedly_card.errors.each do |error|
+      errors.add(error[:attribute], I18n.t(error[:key]))
     end
   end
 end
