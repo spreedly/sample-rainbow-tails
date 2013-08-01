@@ -8,7 +8,7 @@ gem "nokogiri"
 gem "dynamic_form"
 gem 'bootstrap-sass'
 gem 'pg'
-gem 'spreedly', git: "https://github.com/spreedly/spreedly-gem.git", ref: "d2789a80182dd2c0a21f3ec6054bc7ac648df871"
+gem 'spreedly', git: "https://github.com/spreedly/spreedly-gem.git", ref: "138bbc7ac42a7b736c8778d3b351e6e136dc705f"
 
 group :test, :development do
   gem 'log_buddy'

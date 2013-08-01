@@ -1,7 +1,7 @@
 GIT
   remote: https://github.com/spreedly/spreedly-gem.git
-  revision: d2789a80182dd2c0a21f3ec6054bc7ac648df871
-  ref: d2789a80182dd2c0a21f3ec6054bc7ac648df871
+  revision: 138bbc7ac42a7b736c8778d3b351e6e136dc705f
+  ref: 138bbc7ac42a7b736c8778d3b351e6e136dc705f
   specs:
     spreedly (2.0.0)
       nokogiri
