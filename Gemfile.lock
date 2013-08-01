@@ -1,5 +1,5 @@
 GIT
-  remote: git@github.com:spreedly/spreedly-gem.git
+  remote: https://github.com/spreedly/spreedly-gem.git
   revision: d2789a80182dd2c0a21f3ec6054bc7ac648df871
   ref: d2789a80182dd2c0a21f3ec6054bc7ac648df871
   specs:
