@@ -4,7 +4,6 @@ ruby "1.9.3"
 gem 'rails', '3.2.13'
 gem "jquery-rails"
 gem "colored"
-gem "nokogiri"
 gem "dynamic_form"
 gem 'bootstrap-sass'
 gem 'pg'

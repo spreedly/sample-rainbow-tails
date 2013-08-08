@@ -120,7 +120,6 @@ DEPENDENCIES
   dynamic_form
   jquery-rails
   log_buddy
-  nokogiri
   pg
   rails (= 3.2.13)
   sass-rails
