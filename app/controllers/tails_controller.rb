@@ -39,7 +39,7 @@ class TailsController < ApplicationController
   end
 
   def spreedly
-    @spreedly ||= Spreedly::Environment.new(ENV["CORE_ENVIRONMENT_KEY"], ENV["CORE_ACCESS_SECRET"])
+    @spreedly ||= Spreedly::Environment.new(ENV["CORE_ENVIRONMENT_KEY"], ENV["CORE_ACCESS_SECRET"], base_url: ENV["CORE_DOMAIN"])
   end
 
   def amount_to_charge
