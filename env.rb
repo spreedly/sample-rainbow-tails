@@ -11,6 +11,7 @@ ENV["DATABASE_USER"] ||= "root"
 ENV["DATABASE_PASSWORD"] ||= ""
 ENV["DATABASE_ENCODING"] ||= "unicode"
 
+ENV["CORE_DOMAIN"] ||=  "https://core.spreedly.com"
 ENV["CORE_ENVIRONMENT_KEY"] ||= "OB9909MNZj62u9U4VAz3lAAPZcp"
 ENV["CORE_ACCESS_SECRET"] ||= "MIMo7gJrSi3LnJGdRrOZeBBowXmDVE4zEgyHQS91tIqZiJ2oiy6PRt5XJVXG7hcz"
 ENV["CORE_DOMAIN"] ||=  "https://core.spreedly.com"
