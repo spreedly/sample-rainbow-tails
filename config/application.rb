@@ -18,6 +18,5 @@ module RainbowTailsSample
     config.filter_parameters += [:password]
     config.assets.enabled = true
     config.assets.version = '1.0'
-    config.serve_static_assets = true
   end
 end
