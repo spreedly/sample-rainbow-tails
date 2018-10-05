@@ -1,5 +1,4 @@
 class TailsController < ApplicationController
-
   helper_method :spreedly
   rescue_from Spreedly::Error, with: :handle_spreedly_error
 
@@ -20,11 +19,10 @@ class TailsController < ApplicationController
   end
 
   def successful_purchase
-
   end
 
-
   private
+
   def error_saving_card
     return false if params[:error].blank?
 
