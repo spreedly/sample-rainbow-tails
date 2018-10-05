@@ -2,7 +2,7 @@ source 'http://rubygems.org'
 
 ruby "2.1.6"
 
-gem 'rails', '3.2.15'
+gem 'rails', '~> 3.2.22'
 gem "jquery-rails"
 gem "colored"
 gem "dynamic_form"
